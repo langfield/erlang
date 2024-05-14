@@ -2,8 +2,7 @@
 
 -export([steps/1]).
 
-steps(1) -> 0;
-steps(N) when N =< 1 -> error(badarg);
+steps(N) when N < 1 -> error(badarg);
 steps(N) -> steps(N, 0).
 
 %% Tail-recursive helper function.
